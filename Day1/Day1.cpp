@@ -1,12 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <unistd.h>
-#include <ios>
 #include <chrono>
-
-#include <unistd.h>
-
 //
 // Created by DaveRiedel on 1-12-202
 //
@@ -21,6 +16,7 @@ int main() {
     std::ifstream file("day1.txt");
     std::string text;
 
+    //read file into string
     while (std::getline(file, text)) {
         if (text.empty()) {
             if (nrOfCalories > highestCalories) {
