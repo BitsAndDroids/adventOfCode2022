@@ -2,6 +2,8 @@
 #include <fstream>
 #include <string>
 #include <chrono>
+#include <sstream>
+
 //
 // Created by DaveRiedel on 1-12-202
 //
@@ -32,7 +34,8 @@ int main() {
     //end timer
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = end - start;
+
     //in 0.0009714
-    std::cout<<"Answer A: " <<highestCalories << " Answer B: " << highestCalories + secondHighestElf + thirdHighestElf<<" in: " << elapsed.count() << std::endl;
+    std::cout<<"Answer A: " <<highestCalories << " Answer B: " << highestCalories + secondHighestElf + thirdHighestElf<<" in: " << elapsed.count()<<std::endl;
     return 0;
 }

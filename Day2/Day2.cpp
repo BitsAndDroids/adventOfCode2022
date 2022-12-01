@@ -15,7 +15,7 @@ int main(){
         if (text.empty()) {
 
         } else {
-
+            std::cout<<text<<std::endl;
         }
     }
 
