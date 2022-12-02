@@ -1,7 +1,13 @@
+//
+// Created by DaveRiedel on 2-12-2022.
+//
+
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <chrono>
+#include <vector>
+#include "RESULTENUM.h"
 #include "RPCENUM.h"
 #include "Result.h"
 //
@@ -10,9 +16,7 @@
 #define FIRSTROCK "A"
 #define FIRSTPAPER "B"
 #define FIRSTSCISSORS "C"
-#define SECONDROCK "X"
-#define SECONDPAPER "Y"
-#define SECONDSCISSORS "Z"
+
 
 int main(){
     auto start = std::chrono::high_resolution_clock::now();
@@ -26,39 +30,37 @@ int main(){
         if (text.empty()) {
 
         } else {
-            std::string substring = text.substr(0, text.find(' '));
-            std::string secondSubstring = text.substr(text.find(' ') + 1);
-
+            std::string substring = text.substr(0, text.find(" "));
+            std::string secondSubstring = text.substr(text.find(" ") + 1);
+            std::pair<int, int> round = std::pair<int, int>();
             int first = 0;
-            int second = 0;
+            RESULT second;
             if(substring == FIRSTROCK){
-               first = ROCK;
+                first = ROCK;
             } else if(substring == FIRSTPAPER){
-               first = PAPER;
+                first = PAPER;
             } else if(substring == FIRSTSCISSORS){
-              first = SCISSORS;
+                first = SCISSORS;
             }
-            if(secondSubstring == SECONDROCK){
-                second = ROCK;
-            } else if(secondSubstring == SECONDPAPER){
-                second = PAPER;
-            } else if(secondSubstring == SECONDSCISSORS){
-                second = SCISSORS;
+            if(secondSubstring == "X"){
+                second = LOSS;
+            } else if(secondSubstring == "Y"){
+                second = DRAW;
+            } else {
+                second = WIN;
             }
-            Result r = Result(first, second);
-            counter += r.getResult();
-            counter+= second;
+            Result r = Result(first,0,second);
+            counter += second;
+            counter+= r.getPlayedValue();
 
         }
-
     }
-
     //end timer
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = end - start;
-    //in 0.0009959
+    //in 0.0009985
     std::cout <<"Answer: "<<counter<< " in: " << elapsed.count() << std::endl;
-        return 0;
+    return 0;
 
 }
 
