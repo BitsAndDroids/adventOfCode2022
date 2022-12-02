@@ -37,28 +37,8 @@ int main(){
         } else {
             std::string substring = text.substr(0, text.find(' '));
             std::string secondSubstring = text.substr(text.find(' ') + 1);
-
-            int first = 0;
-            RESULT second;
-            if(substring == FIRSTROCK){
-                first = ROCK;
-            } else if(substring == FIRSTPAPER){
-                first = PAPER;
-            } else if(substring == FIRSTSCISSORS){
-                first = SCISSORS;
-            }
-            if(secondSubstring == "X"){
-                second = LOSS;
-            } else if(secondSubstring == "Y"){
-                second = DRAW;
-            } else {
-                second = WIN;
-            }
-            //Building upon day 1. This solution is a bit bloated, but it works.
-            //Result r = Result(first,0,second);
-            //counter += second;
-            //counter+= r.getPlayedValue();
-
+            int first = (substring == FIRSTROCK) ? ROCK : (substring == FIRSTPAPER) ? PAPER : SCISSORS;
+            RESULT second = (secondSubstring == "X") ? LOSS : (secondSubstring == "Y") ? DRAW : WIN;
             //Another compacter way to do this
             counter += second;
             //The first row is the first player's move, the second row is the second player's move.
