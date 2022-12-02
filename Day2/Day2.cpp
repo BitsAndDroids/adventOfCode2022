@@ -48,9 +48,7 @@ int main(){
             Result r = Result(first, second);
             counter += r.getResult();
             counter+= second;
-
         }
-
     }
 
     //end timer

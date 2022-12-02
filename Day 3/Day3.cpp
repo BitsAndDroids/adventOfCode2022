@@ -10,7 +10,7 @@ int main(){
     auto start = std::chrono::high_resolution_clock::now();
 
     //Read file into string
-    std::ifstream file("day3.txt");
+    std::ifstream file("day4.txt");
     std::string text;
     while (std::getline(file, text)) {
         if (text.empty()) {
