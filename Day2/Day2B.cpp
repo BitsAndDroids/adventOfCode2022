@@ -1,12 +1,7 @@
-//
-// Created by DaveRiedel on 2-12-2022.
-//
-
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <chrono>
-#include <vector>
 #include "RESULTENUM.h"
 #include "RPCENUM.h"
 #include "Result.h"
@@ -30,9 +25,9 @@ int main(){
         if (text.empty()) {
 
         } else {
-            std::string substring = text.substr(0, text.find(" "));
-            std::string secondSubstring = text.substr(text.find(" ") + 1);
-            std::pair<int, int> round = std::pair<int, int>();
+            std::string substring = text.substr(0, text.find(' '));
+            std::string secondSubstring = text.substr(text.find(' ') + 1);
+
             int first = 0;
             RESULT second;
             if(substring == FIRSTROCK){
