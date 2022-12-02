@@ -61,6 +61,7 @@ int main(){
 
             //Another compacter way to do this
             counter += second;
+            //The first row is the first player's move, the second row is the second player's move.
             counter += move[second + 1][first - 1];
 
         }
