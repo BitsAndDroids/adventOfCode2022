@@ -11,7 +11,18 @@
 #define FIRSTROCK "A"
 #define FIRSTPAPER "B"
 #define FIRSTSCISSORS "C"
+//Alternative solution
+int move[8][3] = {
+        {ROCK, PAPER, SCISSORS},
+        {SCISSORS, ROCK, PAPER},
+        {},
+        {},
+        {ROCK, PAPER, SCISSORS},
+        {},
+        {},
+        {PAPER, SCISSORS, ROCK},
 
+};
 
 int main(){
     auto start = std::chrono::high_resolution_clock::now();
@@ -44,9 +55,14 @@ int main(){
             } else {
                 second = WIN;
             }
-            Result r = Result(first,0,second);
+
+//            Result r = Result(first,0,second);
+//            counter += second;
+//            counter+= r.getPlayedValue();
+
+            //Another compacter way to do this
             counter += second;
-            counter+= r.getPlayedValue();
+            counter += move[second + 1][first - 1];
 
         }
     }
