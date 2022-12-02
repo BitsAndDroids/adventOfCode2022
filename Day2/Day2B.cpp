@@ -21,7 +21,6 @@ int move[8][3] = {
         {},
         {},
         {PAPER, SCISSORS, ROCK},
-
 };
 
 int main(){
@@ -55,10 +54,10 @@ int main(){
             } else {
                 second = WIN;
             }
-
-//            Result r = Result(first,0,second);
-//            counter += second;
-//            counter+= r.getPlayedValue();
+            //Building upon day 1. This solution is a bit bloated, but it works.
+            //Result r = Result(first,0,second);
+            //counter += second;
+            //counter+= r.getPlayedValue();
 
             //Another compacter way to do this
             counter += second;
