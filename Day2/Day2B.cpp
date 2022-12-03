@@ -3,11 +3,17 @@
 #include <string>
 #include <chrono>
 
-#include "RESULTENUM.h"
-#include "RPCENUM.h"
-//
-// Created by DaveRiedel on 1-12-2022.
-//
+enum RESULT{
+    WIN = 6,
+    DRAW = 3,
+    LOSS = 0
+} ;
+enum RPC{
+    ROCK = 1,
+    PAPER = 2,
+    SCISSORS = 3
+};
+
 #define FIRSTROCK "A"
 #define FIRSTPAPER "B"
 #define SECONDLOSS "X"
